@@ -1,0 +1,230 @@
+{% extends 'base.html' %}
+{%block content%}
+<!-- pre loader end -->
+<!-- main wrapper start -->
+<div class="pa-main-wrapper">
+    <!-- top header start -->
+    <!-- top header end -->
+    <!-- main header start -->
+
+    <!-- main header end -->
+    <!-- breadcrumb start -->
+    <div class="pa-breadcrumb">
+        <div class="container-fluid">
+            <div class="pa-breadcrumb-box">
+                <h1>product single</h1>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>product single</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb end -->
+    <!-- product single start -->
+    <div class="pa-product-single spacer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="pa-prod-thumb-img">
+                                <img src="{{product.img.url}}" alt="image" class="img-fluid"/>
+                            </div>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="pa-prod-content">
+                                <h2 class="pa-prod-title">{{product.title}}</h2>
+                                {% if product.bonus == 0 %}
+                                <p class="pa-prod-price"><span>Price:  </span> ${{product.price}} <span class="pa-offer-price"></span></p>
+                                {% else %}
+                                <p class="pa-prod-price"><span>Price: <del>${{product.price}}</del></span> ${{product.bonus}} <span class="pa-offer-price">25% off</span></p>
+                              {% endif %}
+                                <a href="#" class="pa-prod-category"><span>Category:</span>{{product.category}}</a>
+                                <p class="pa-rating">
+                                         {% if product.rating == 1 %}
+                                        <i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                                        {% elif product.rating == 2 %}
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                                        {% elif product.rating == 3 %}
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                                        {% elif product.rating == 4 %}
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                        {% elif product.rating == 5 %}
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                        {% else %}
+                                        <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+
+                                        {% endif %}
+                                </p>
+                                <ul>
+                                    <li><span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-38 0 512 512.00142">
+                                            <path d="M 435.488281 138.917969 L 435.472656 138.519531 C 435.25 133.601562 435.101562 128.398438 435.011719 122.609375 C 434.59375 94.378906 412.152344 71.027344 383.917969 69.449219 C 325.050781 66.164062 279.511719 46.96875 240.601562 9.042969 L 240.269531 8.726562 C 227.578125 -2.910156 208.433594 -2.910156 195.738281 8.726562 L 195.40625 9.042969 C 156.496094 46.96875 110.957031 66.164062 52.089844 69.453125 C 23.859375 71.027344 1.414062 94.378906 0.996094 122.613281 C 0.910156 128.363281 0.757812 133.566406 0.535156 138.519531 L 0.511719 139.445312 C -0.632812 199.472656 -2.054688 274.179688 22.9375 341.988281 C 36.679688 379.277344 57.492188 411.691406 84.792969 438.335938 C 115.886719 468.679688 156.613281 492.769531 205.839844 509.933594 C 207.441406 510.492188 209.105469 510.945312 210.800781 511.285156 C 213.191406 511.761719 215.597656 512 218.003906 512 C 220.410156 512 222.820312 511.761719 225.207031 511.285156 C 226.902344 510.945312 228.578125 510.488281 230.1875 509.925781 C 279.355469 492.730469 320.039062 468.628906 351.105469 438.289062 C 378.394531 411.636719 399.207031 379.214844 412.960938 341.917969 C 438.046875 273.90625 436.628906 199.058594 435.488281 138.917969 Z M 384.773438 331.523438 C 358.414062 402.992188 304.605469 452.074219 220.273438 481.566406 C 219.972656 481.667969 219.652344 481.757812 219.320312 481.824219 C 218.449219 481.996094 217.5625 481.996094 216.679688 481.820312 C 216.351562 481.753906 216.03125 481.667969 215.734375 481.566406 C 131.3125 452.128906 77.46875 403.074219 51.128906 331.601562 C 28.09375 269.097656 29.398438 200.519531 30.550781 140.019531 L 30.558594 139.683594 C 30.792969 134.484375 30.949219 129.039062 31.035156 123.054688 C 31.222656 110.519531 41.207031 100.148438 53.765625 99.449219 C 87.078125 97.589844 116.34375 91.152344 143.234375 79.769531 C 170.089844 68.402344 193.941406 52.378906 216.144531 30.785156 C 217.273438 29.832031 218.738281 29.828125 219.863281 30.785156 C 242.070312 52.378906 265.921875 68.402344 292.773438 79.769531 C 319.664062 91.152344 348.929688 97.589844 382.246094 99.449219 C 394.804688 100.148438 404.789062 110.519531 404.972656 123.058594 C 405.0625 129.074219 405.21875 134.519531 405.453125 139.683594 C 406.601562 200.253906 407.875 268.886719 384.773438 331.523438 Z M 384.773438 331.523438 "></path>
+                                            <path d="M 217.996094 128.410156 C 147.636719 128.410156 90.398438 185.652344 90.398438 256.007812 C 90.398438 326.367188 147.636719 383.609375 217.996094 383.609375 C 288.351562 383.609375 345.59375 326.367188 345.59375 256.007812 C 345.59375 185.652344 288.351562 128.410156 217.996094 128.410156 Z M 217.996094 353.5625 C 164.203125 353.5625 120.441406 309.800781 120.441406 256.007812 C 120.441406 202.214844 164.203125 158.453125 217.996094 158.453125 C 271.785156 158.453125 315.546875 202.214844 315.546875 256.007812 C 315.546875 309.800781 271.785156 353.5625 217.996094 353.5625 Z M 217.996094 353.5625 "></path>
+                                            <path d="M 254.667969 216.394531 L 195.402344 275.660156 L 179.316406 259.574219 C 173.449219 253.707031 163.9375 253.707031 158.070312 259.574219 C 152.207031 265.441406 152.207031 274.953125 158.070312 280.816406 L 184.78125 307.527344 C 187.714844 310.460938 191.558594 311.925781 195.402344 311.925781 C 199.246094 311.925781 203.089844 310.460938 206.023438 307.527344 L 275.914062 237.636719 C 281.777344 231.769531 281.777344 222.257812 275.914062 216.394531 C 270.046875 210.523438 260.535156 210.523438 254.667969 216.394531 Z M 254.667969 216.394531 "></path>
+                                            </svg>
+                                    </span>{{product.productservice}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="pa-prod-content">
+                                <div class="pa-prod-count">
+
+                                    <button class="pa-btn">add to cart</button>
+                                </div>
+                                <h2>Product haqida</h2>
+                               {{product.about}}
+                                    </div>
+                        </div>
+                    </div>
+                    <!-- product start -->
+                    <div class="pa-related-product">
+                        <div class="container">
+                            <div class="pa-heading">
+                                <h1>Related products</h1>
+                            </div>
+                            <div class="row">
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        {% for i in products %}
+                                        <div class="swiper-slide">
+                                            <div class="pa-product-box">
+                                                <div class="pa-product-img">
+                                                    <img src="{{i.img.url}}" alt="image" class="img-fluid"/>
+                                                </div>
+                                                <div class="pa-product-content">
+                                                    <h4><a href="#">{{i.title}}</a></h4>
+                                                    <p class="pa-product-rating">
+                                                    {% if i.rating == 1 %}
+                                                    <i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                                                    {% elif i.rating == 2 %}
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                                                    {% elif i.rating == 3 %}
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                                                    {% elif i.rating == 4 %}
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                                    {% elif i.rating == 5 %}
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                                    {% else %}
+                                                    <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+
+                                        {% endif %}
+                                                    </p>
+                                                    {% if i.bonus == 0 %}
+                                                    <p>$ {{i.price}}</p>
+                                                    {% else %}
+                                                     <p><del>$ {{i.price}}</del>$ {{i.bonus}}</p>
+                                                    {% endif %}
+
+                                                </div>
+                                                <div class="pa-product-cart">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="{% url 'add-card' i.id %}">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 469.333 469.333">
+                                                                    <g>
+                                                                        <path d="M434.979,42.667H85.333c-1.053,0-2.014,0.396-3.001,0.693l-8.594-28.241C71.005,6.138,62.721,0,53.333,0H10.667
+                                                                            C4.776,0,0,4.776,0,10.667V32c0,5.891,4.776,10.667,10.667,10.667h26.865l66.646,219.01l-24.891,29.039
+                                                                            c-9.838,11.477-14.268,27.291-9.74,41.713c5.791,18.445,22.07,30.237,40.839,30.237H416c5.891,0,10.667-4.776,10.667-10.667
+                                                                            v-21.333c0-5.891-4.776-10.667-10.667-10.667H110.385l33.813-39.448c0.85-0.992,1.475-2.112,2.12-3.219h206.703
+                                                                            c16.533,0,31.578-9.548,38.618-24.507l74.434-158.17c2.135-4.552,3.26-9.604,3.26-14.615v-3.021
+                                                                            C469.333,58.048,453.952,42.667,434.979,42.667z"/>
+                                                                        <circle cx="128" cy="426.667" r="42.667"/>
+                                                                        <circle cx="384" cy="426.667" r="42.667"/>
+                                                                    </g>
+                                                                </svg>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="{% url 'add-wishlist' i.id %}">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                                    <g>
+                                                                        <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268
+                                                                            c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514
+                                                                            c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482
+                                                                            s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
+                                                                            C512,93.417,453.532,30,376,30z"/>
+                                                                    </g>
+                                                                </svg>                                        
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="{% url 'product-single' i.id %}    ">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 461.312 461.312">
+                                                                    <g>
+                                                                        <path d="M230.656,156.416c-40.96,0-74.24,33.28-74.24,74.24s33.28,74.24,74.24,74.24s74.24-33.28,74.24-74.24
+                                                                            S271.616,156.416,230.656,156.416z M225.024,208.64c-9.216,0-16.896,7.68-16.896,16.896h-24.576
+                                                                            c0.512-23.04,18.944-41.472,41.472-41.472V208.64z"/>
+                                                                    </g>
+                                                                    <g>
+                                                                        <path d="M455.936,215.296c-25.088-31.232-114.688-133.12-225.28-133.12S30.464,184.064,5.376,215.296
+                                                                            c-7.168,8.704-7.168,21.504,0,30.72c25.088,31.232,114.688,133.12,225.28,133.12s200.192-101.888,225.28-133.12
+                                                                            C463.104,237.312,463.104,224.512,455.936,215.296z M230.656,338.176c-59.392,0-107.52-48.128-107.52-107.52
+                                                                            s48.128-107.52,107.52-107.52s107.52,48.128,107.52,107.52S290.048,338.176,230.656,338.176z"/>
+                                                                    </g>
+                                                                </svg>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                    <!-- Add Arrows -->
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- product end -->
+                </div>
+                <div class="col-lg-4">
+                    <div class="pa-product-sidebar">
+                           <form action="{% url 'search-product' %}" method="post">
+                        {% csrf_token %}
+                            <div class="pa-widget pa-search">
+                            <input type="text" name="name" placeholder="Product search">
+                            <button class="pa-btn">Search</button>
+                        </div>
+                            </form>
+                        <div class="pa-widget pa-shop-category">
+                            <h2 class="pa-sidebar-title">Categories</h2>
+                             <ul>
+                                {% for i in categorys %}
+                                <li><a href="{% url 'category' i.id %}">{{ i.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="pa-widget pa-product-widget">
+                            <h2 class="pa-sidebar-title">Top products</h2>
+                            <ul>
+                                {% for i in products %}
+                                  {%  if i.rating >= 3  %}
+                                <li>
+                                    <div class="pa-pro-wid-img">
+                                        <img src="{{i.img.url}}" alt="image" class="img-fluid"/>
+                                    </div>
+                                    <div class="pa-pro-wid-content">
+                                        <h4><a href="{% url 'product-single' i.id %}">{{i.title}}</a></h4>
+                                        <p>{{i.about}}</p>
+                                    </div>
+                                </li>
+                                {% else %}
+
+                                {% endif %}
+                                   {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- product single end -->
+    <!-- footer start -->
+{% endblock %}
+</div>

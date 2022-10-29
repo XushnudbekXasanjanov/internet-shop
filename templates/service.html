@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+<!-- pre loader end -->    
+<!-- main wrapper start -->
+<div class="pa-main-wrapper">
+    <!-- top header start -->
+
+    <!-- top header end -->
+    <!-- main header start -->
+
+    <!-- main header end -->
+    <!-- breadcrumb start -->
+    <div class="pa-breadcrumb">
+        <div class="container-fluid">
+            <div class="pa-breadcrumb-box">
+                <h1>Services</h1>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>Services</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb end -->
+    <!-- services start -->
+    <div class="pa-services spacer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="pa-services-img">
+                        <img src="{{service.img.url}}" alt="image" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="pa-services-content">
+                        <div class="pa-heading">
+                            <img src="{% static 'images/herbal.svg' %}" alt="image" class="img-fluid"/>
+                            <h1>Our Best Services</h1>
+                            <h5>{{service.title}}</h5>
+                        </div>
+                    <p>{{service.text}}</p>
+                       <ul>
+                             {% for i in miniservice %}
+                            <li>
+                                <div class="pa-services-icon">
+                                    <svg viewBox="0 0 480.13772 480" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="m333.601562 375.589844-101.035156-49.058594c-11.003906-5.25-24.203125-1.476562-30.765625 8.800781l-23.128906 36.738281c-2.140625 3.496094-6.582031 4.808594-10.28125 3.039063-13.566406-6.796875-26.09375-15.5-37.199219-25.839844-10.476562-11.171875-19.289062-23.800781-26.160156-37.488281-1.800781-3.707031-.507812-8.175781 2.992188-10.351562l36.800781-23.152344c10.261719-6.59375 14.003906-19.796875 8.71875-30.792969l-49.0625-101.015625c-2.78125-5.773438-7.777344-10.175781-13.855469-12.207031-6.152344-2.089844-12.886719-1.605469-18.671875 1.34375-7.359375 3.664062-71.953125 37.128906-71.953125 80.464843v8c1.199219 67.492188 28.511719 131.894532 76.199219 179.671876l.128906.125c47.777344 47.691406 112.179687 75.003906 179.671875 76.203124h8c43.320312 0 76.800781-64.585937 80.425781-71.914062 2.960938-5.796875 3.449219-12.546875 1.359375-18.710938-2.027344-6.074218-6.421875-11.070312-12.183594-13.855468zm-108-34.648438 100.957032 49.039063c1.910156.921875 3.367187 2.574219 4.042968 4.585937.699219 2.113282.519532 4.417969-.496093 6.398438-1.136719 2.273437-2.457031 4.726562-3.867188 7.265625l-115.726562-56.730469 4.800781-7.597656c2.203125-3.425782 6.601562-4.691406 10.289062-2.960938zm-146.472656-191.015625c1.980469-1.023437 4.289063-1.195312 6.398438-.480469 2.003906.664063 3.65625 2.105469 4.585937 4l49.015625 100.917969c1.769532 3.683594.53125 8.109375-2.898437 10.335938l-7.644531 4.800781-56.761719-115.6875c2.574219-1.414062 5.015625-2.742188 7.304687-3.886719zm184.871094 314.144531h-8c-131.539062-2.40625-237.59375-108.460937-240-240v-8c0-20.136718 21.441406-40.074218 42.121094-53.882812l56.800781 115.9375-15.464844 9.742188c-10.441406 6.554687-14.238281 19.933593-8.800781 30.992187 7.652344 15.238281 17.484375 29.277344 29.183594 41.679687 12.339844 11.566407 26.285156 21.289063 41.398437 28.875 11.050781 5.414063 24.40625 1.589844 30.921875-8.847656l9.734375-15.449218 115.9375 56.800781c-13.761719 20.703125-33.703125 42.152343-53.832031 42.152343zm0 0"/>
+                                        <path d="m328 .0703125c-54.882812-.0390625-105.515625 29.5351565-132.449219 77.3554685-26.933593 47.820313-25.976562 106.449219 2.503907 153.363281l-17.046876 68.273438 68.273438-17.050781c54.988281 33.371093 125.03125 28.515625 174.890625-12.121094 49.859375-40.640625 68.738281-108.265625 47.144531-168.855469-21.597656-60.589844-78.992187-101.0234372-143.316406-100.9648435zm0 287.9999995c-25.894531.023438-51.246094-7.394531-73.039062-21.378906l-2.90625-1.863281-49.0625 12.25 12.246093-49.066406-1.863281-2.902344c-33.324219-52.375-26.9375-120.667969 15.523438-165.953125 42.457031-45.285156 110.199218-56.054688 164.609374-26.167969 54.40625 29.882813 81.660157 92.832031 66.21875 152.957031-15.441406 60.125-69.652343 102.152344-131.726562 102.125zm0 0"/>
+                                        <path d="m216 128.070312h16v-8h16v12l-32 24v28h48v-16h-32v-4l32-24v-36h-48zm0 0"/>
+                                        <path d="m320 104.070312h-16v48h-16v-48h-16v64h32v16h16v-16h16v-16h-16zm0 0"/>
+                                        <path d="m336.296875 205.9375 39.980469-144.011719 15.421875 4.28125-39.976563 144.011719zm0 0"/>
+                                        <path d="m392 104.070312v16h30.023438l-13.839844 62.261719 15.632812 3.472657 18.160156-81.734376zm0 0"/></svg>
+                                </div>
+
+                                <div class="pa-services-data">
+                                    <h2>{{i.miniservicetitle}}</h2>
+                                    <p>{{i.miniservicetext}}</p>
+                                </div>
+                            </li>
+                           {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- services end -->
+    <!-- why start -->
+
+    <!-- why end -->
+    <!-- priceing plan start -->
+    <div class="pa-price-plan spacer-top">
+        <div class="container">
+            <div class="pa-heading">
+                <img src="{% static 'images/herbal.svg' %}" alt="image" class="img-fluid"/>
+                <h1>Pricing plans</h1>
+                <h5>special plans</h5>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="pa-plan-box">
+                        <h2 class="pa-plan-title">Basic</h2>
+                        <h2 class="pa-plan-price"><span>$</span> {{plan.basicprice}} <span class="pa-plan-month">month</span> </h2>
+                        <ul>
+                            <li>{{plan.basictext}}</li>
+                        </ul>
+                        <button class="pa-btn">buy now</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="pa-plan-box pa-popular-plan">
+                        <p class="pa-plan-offer">Popular plan</p>
+                        <h2 class="pa-plan-title">standard</h2>
+                        <h2 class="pa-plan-price"><span>$</span> {{plan.standardprice}} <span class="pa-plan-month">month</span> </h2>
+                        <ul>
+                            <li>{{plan.standardtext}}</li>
+                        </ul>
+                        <button class="pa-btn">buy now</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="pa-plan-box">
+                        <h2 class="pa-plan-title">premium</h2>
+                        <h2 class="pa-plan-price"><span>$</span> {{plan.premiumprice}} <span class="pa-plan-month">month</span> </h2>
+                        <ul>
+                            <li>{{plan.premiumtext}}</li>
+                        </ul>
+                        <button class="pa-btn">buy now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- priceing plan end -->
+    <!-- footer start -->
+{% endblock %}
+</div>

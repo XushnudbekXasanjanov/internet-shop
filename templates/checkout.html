@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{%block content%}
+<!-- pre loader start -->
+<!-- pre loader end -->
+<!-- main wrapper start -->
+<div class="pa-main-wrapper">
+    <!-- top header start -->
+    <!-- top header end -->
+    <!-- main header start -->
+    <!-- main header end -->
+    <!-- breadcrumb start -->
+    <div class="pa-breadcrumb">
+        <div class="container-fluid">
+            <div class="pa-breadcrumb-box">
+                <h1>checkout</h1>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>checkout</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb end -->
+    <!-- checkout start -->
+    <div class="pa-checkout spacer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="pa-bill-form">
+                        <form action="{% url 'add-order' %}" method="post">
+                            {% csrf_token %}
+                            <label class="pa-bill-title">
+                                Billing details
+                            </label>
+                            <label>
+                             <input type="hidden" value="{{ user.id }}" name="user">
+                            </label>
+                            <label>
+                                <span>Full name</span>
+                                <input type="text" name="name">
+                            </label>
+                            <label>
+                                <span>Mobile</span>
+                                <input type="number" name="mobile">
+                            </label>
+                            <label>
+                                <span>Address</span>
+                                <input type="text" name="adress">
+                            </label>
+                            <label>
+                                <span>State</span>
+                                <input type="text" name="state">
+                            </label>
+                            <label>
+                                <span>City</span>
+                                <input type="text" name="city">
+                            </label>
+                             <button class="submit">Yuborish</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="pa-bill-detail">
+                        <p class="pa-bill-title">Order details</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Product name</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in card %}
+                                <tr>
+                                    <td>{{i.product.title}}</td>
+                                    {% if i.product.bonus > 0 %}
+                                    <td>${{i.product.bonus}}</td>
+                                    {% else %}
+                               <td>${{i.product.price}}</td>
+                                    {% endif %}
+                                </tr>
+                             {% endfor %}
+                                <tr class="pa-checkout-total">
+                                    <td>Umumiy narx</td>
+                                    <td>${{ total }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- checkout end -->
+    <!-- footer start -->
+    {% endblock %}
+</div>
+<!-- main wrapper end -->
+

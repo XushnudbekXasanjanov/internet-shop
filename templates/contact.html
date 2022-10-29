@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- pre loader end -->    
+<!-- main wrapper start -->
+<div class="pa-main-wrapper">
+    <!-- top header start -->
+
+    <!-- top header end -->
+    <!-- main header start -->
+    <!-- main header end -->
+    <!-- breadcrumb start -->
+    <div class="pa-breadcrumb">
+        <div class="container-fluid">
+            <div class="pa-breadcrumb-box">
+                <h1>contact us</h1>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>contact us</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb end -->
+    <!-- contact start -->
+    <div class="pa-contact spacer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="pa-contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d386723.46653659927!2d72.04817615975404!3d40.77792225155003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bceb848893eb2b%3A0x47c11fe7b2af893!2s2%20Chi%20Andijon!5e0!3m2!1sru!2s!4v1659822715179!5m2!1sru!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="pa-contact-form">
+                        <form action="{% url 'add-contact' %}" method="post">
+                            {% csrf_token %}
+                            <input type="text" placeholder="Enater your name" name="name"  class="require"/>
+                            <input type="text"  placeholder="Enter your email" name="email" class="require" data-valid="email" data-error="Email should be valid."/>
+                            <input type="text"  placeholder="Enter your subject" name="subject" class="require"/>
+                            <textarea placeholder="Message here" name="message"  class="require"></textarea>
+                            <button type="submit" class="pa-btn submitForm">submit</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- contact end -->
+    <!-- contact detail start -->
+    <div class="pa-contact-detail">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="pa-contact-box">
+                        <h4>Address</h4>
+                        <p>25 LNB Devonshire Street London W1G 7AE</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="pa-contact-box">
+                        <h4>Contant no.</h4>
+                        <p>+001 4567891236</p>
+                        <p>+001 7894561230</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="pa-contact-box">
+                        <h4>Email</h4>
+                        <p>support@pureaurveda.com</p>
+                        <p>support.pureaurveda@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- contact detail end -->
+    <!-- footer start -->
+{% endblock %}
+</div>

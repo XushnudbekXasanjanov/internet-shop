@@ -1,0 +1,23 @@
+from django.contrib import admin
+from .models import *
+
+admin.site.register(IndexBlog)
+admin.site.register(Product)
+admin.site.register(ProductCategories)
+admin.site.register(About)
+admin.site.register(AboutMembers)
+admin.site.register(AboutExperts)
+admin.site.register(Services)
+admin.site.register(MiniServices)
+admin.site.register(ServicePlan)
+admin.site.register(Blog)
+admin.site.register(Contact)
+admin.site.register(Home)
+admin.site.register(HomeAboutService)
+admin.site.register(HomeAbout)
+admin.site.register(Card)
+admin.site.register(Profile)
+admin.site.register(Wishlist)
+admin.site.register(OrderItem)
+admin.site.register(Order)
+admin.site.register(Subscribe)

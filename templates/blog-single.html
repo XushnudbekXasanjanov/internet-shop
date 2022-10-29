@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{%block content%}
+<!-- pre loader end -->
+<!-- main wrapper start -->
+<div class="pa-main-wrapper">
+    <!-- top header start -->
+
+    <!-- top header end -->
+    <!-- main header start -->
+    <!-- main header end -->
+    <!-- breadcrumb start -->
+    <div class="pa-breadcrumb">
+        <div class="container-fluid">
+            <div class="pa-breadcrumb-box">
+                <h1>blog single</h1>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>blog single</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb end -->
+    <!-- blog single start -->
+    <div class="pa-blog-single spacer-top spacer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="pa-blog-box">
+                        <img src="{{blog.img.url}}" alt="image" class="img-fluid">
+                        <div class="pa-blog-title">
+                            <a href="#" class="pa-blog-category">{{blog.firstname}}</a>
+                            <h2>{{blog.title}}</h2>
+                            <a href="#" class="pa-blog-date">{{blog.date}}</a>
+                        </div>
+                        <div class="pa-blog-view">
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="far fa-heart"></i> 900</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fas fa-eye"></i> 830</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fas fa-share-alt"></i> Share</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pa-bs-content">
+                   <p>{{blog.text}}</p>
+                    </div>
+
+                </div>
+                <div class="col-lg-4">
+                    <div class="pa-blog-sidebar">
+                             <form action="{% url 'search-blog' %}" method="post">
+                        {% csrf_token %}
+                            <div class="pa-widget pa-search">
+                            <input type="text" name="name" placeholder="Product search">
+                            <button class="pa-btn">Search</button>
+                        </div>
+                            </form>
+                        <div class="pa-widget pa-shop-category">
+                            <h2 class="pa-sidebar-title">blog Categories</h2>
+                            <ul>
+                                {% for i in categorys %}
+                                <li><a href="{% url 'category' i.id %}">{{ i.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="pa-widget pa-product-widget">
+                            <h2 class="pa-sidebar-title">Recent Posts</h2>
+                            <ul>
+                                {% for i in blogs %}
+                                <li>
+                                    <div class="pa-pro-wid-img">
+                                        <img src="{{i.img.url}}" alt="image" class="img-fluid">
+                                    </div>
+                                    <div class="pa-pro-wid-content">
+                                        <h4><a href="{% url 'blog-single' i.id %}">{{i.title}}</a></h4>
+                                        <p>{{i.text|truncatechars:50}}</p>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- blog single end -->
+    <!-- footer start -->
+
+    <!-- copyright end -->
+    <!-- login start -->
+ {% endblock %}
+
+</div>

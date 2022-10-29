@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{%block content%}
+<!-- pre loader end -->     
+<!-- main wrapper start -->
+<div class="pa-main-wrapper">
+    <!-- top header start -->
+    <!-- top header end -->
+    <!-- main header start -->
+
+    <!-- main header end -->
+    <!-- breadcrumb start -->
+    <div class="pa-breadcrumb">
+        <div class="container-fluid">
+            <div class="pa-breadcrumb-box">
+                <h1>Cart</h1>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>Cart</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb end -->
+    <!-- cart start -->
+    <div class="pa-cart spacer-top spacer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="pa-cart-box">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Product image</th>
+                                    <th>Product name</th>
+                                    <th> price</th>
+                                    <th>Bonus</th>
+                                     <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                             {% for i in wishlist %}
+                                <tr>
+                                    <td>{{forloop.counter}}</td>
+                                    <td>
+                                        <div class="pa-cart-img">
+                                            <img src="{{i.product.img.url}}" alt="image" class="img-fluid"/>
+                                        </div>
+                                    </td>
+                                    <td>
+                                      {{i.product.title}}
+                                    </td>
+                                    <td>${{i.product.price}}</td>
+                                    <td>${{i.product.bonus}}</td>
+
+                                    <td><a href="{% url 'delete-card' i.id %}">Delete </a></td>
+                                </tr>
+                             {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- cart end -->
+    <!-- footer start -->
+    {% endblock content %}
+</div>
+<!-- main wrapper end -->
